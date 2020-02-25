@@ -508,6 +508,7 @@ export default class RecyclerListView extends React.Component<
       const itemRect = (this._virtualRenderer.getLayoutManager() as LayoutManagerInterface).getLayouts()[
         dataIndex
       ];
+      if(itemRect === undefined) return;
       const data = this._dataProvider.getDataForIndex(dataIndex);
       const type = this._layoutProvider.getLayoutTypeForIndex(dataIndex);
       this._assertType(type);
